@@ -1,83 +1,73 @@
-# Gestor-de-ventas-inventario
-Aplicación web para la gestión de ventas desarrollada en Java (JSP + JSTL) con conexión a base de datos MySQL. Permite registrar, consultar, editar y generar reportes en PDF de ventas de productos.
+# Gestor de Ventas e Inventario
 
-Características principales
-Módulo de autenticación (login seguro)
-Registro de ventas (producto, precio, cantidad)
-Tabla interactiva con funciones CRUD (editar/eliminar)
-Reportes en PDF integrados con JasperReports
-Diseño responsivo (Bootstrap 5 + Font Awesome)
-Validación de formularios en frontend y backend
+Aplicación web desarrollada en **Java (JSP + JSTL)** con conexión a base de datos **MySQL** para la gestión de ventas. Permite registrar, consultar, editar y generar reportes en PDF de ventas de productos.
 
-Tecnologías utilizadas:
-Categoría	                             Tecnologías
-Frontend	           HTML5, CSS3, Bootstrap 5, JavaScript, Font Awesome
-Backend	             Java (JSP), JSTL (Core, SQL), Servlets (opcional)
-Base de datos	MySQL                      (JDBC)
-Generación de PDF	               JasperReports / iReport
-Servidor	                           GlassFish Server
+## Características principales
 
-Estructura del proyecto:
+- Módulo de autenticación (login seguro)
+- Registro de ventas (producto, precio, cantidad)
+- Tabla interactiva con funciones CRUD (editar/eliminar)
+- Generación de reportes en PDF (JasperReports)
+- Diseño responsivo con Bootstrap 5 + Font Awesome
+- Validación de formularios en frontend y backend
 
-Captura del proyecto
-![image](https://github.com/user-attachments/assets/81b7837c-3268-4d0d-9bdc-e7ed4865f44f)
+## Tecnologías utilizadas
 
-Base de datos tablas correspondientes al proyecto:
+| Categoría         | Tecnologías                                              |
+|-------------------|----------------------------------------------------------|
+| **Frontend**       | HTML5, CSS3, Bootstrap 5, JavaScript, Font Awesome      |
+| **Backend**        | Java (JSP), JSTL (Core, SQL), Servlets (opcional)       |
+| **Base de datos**  | MySQL (JDBC)                                             |
+| **PDF Reports**    | JasperReports / iReport                                 |
+| **Servidor**       | GlassFish Server                                         |
 
-usuarios donde se almacela el login
-![image](https://github.com/user-attachments/assets/f90aa4d5-52fa-4b42-9c81-af92974f42c2)
+## Estructura del Proyecto
 
-las ventas donde se alojara el invetario-ventas
-![image](https://github.com/user-attachments/assets/f3afdada-8012-4783-80e6-799625c4f36d)
+### Captura del proyecto
+![Proyecto](https://github.com/user-attachments/assets/81b7837c-3268-4d0d-9bdc-e7ed4865f44f)
 
-Todo dentro de la base de datos bdxml2 (ustedes pueden cambiar el nombre de la base de dataos a tu gusto)
+### Base de datos
 
-EN CASO DE LAS LIBREIRAS ES NECESARIO TENER LO SIGUENTE:
-Dentro de la carpeta del proyecto te encontraras un archivo de java, no es nesesario tenerlo dentro del proyecto ya que al importarlo se guarda dentro del proyecto.
-![image](https://github.com/user-attachments/assets/f6bf2132-0f38-4d89-9d8d-40baad8b162e)
-y como ejemplo de como importarlo:
-![image](https://github.com/user-attachments/assets/494079a3-b7a2-44d3-80f5-ad13be2004a9)
+#### Tabla `usuarios` (login de usuario)
+![Usuarios](https://github.com/user-attachments/assets/f90aa4d5-52fa-4b42-9c81-af92974f42c2)
 
-![image](https://github.com/user-attachments/assets/4ad8fa40-08ac-411e-96d1-e5a3b6642a56)
+#### Tabla `ventas` (registro de inventario/ventas)
+![Ventas](https://github.com/user-attachments/assets/f3afdada-8012-4783-80e6-799625c4f36d)
 
-y asi es como se importar las librerias correspondientes.
-Tambien otro punto como tiene jstl para java es nesesario importarlo de la siguiente manera:
+La base de datos se llama `bdxml2`, pero puedes renombrarla a tu gusto.
 
-![image](https://github.com/user-attachments/assets/6615c2f2-26a2-401d-b52f-e445b3cc358d)
+## Librerías necesarias
 
-![image](https://github.com/user-attachments/assets/a065fabc-3872-452d-b33b-3c93d4bd6915)
+- Dentro del proyecto encontrarás un archivo `.jar`. Este se importa automáticamente, pero puedes hacerlo manualmente si es necesario:
 
-y cuando lo agregas a la libreria verifica de que ya este importado
+![Importar JAR](https://github.com/user-attachments/assets/f6bf2132-0f38-4d89-9d8d-40baad8b162e)
+![Ejemplo de importación](https://github.com/user-attachments/assets/494079a3-b7a2-44d3-80f5-ad13be2004a9)
 
+### JSTL
+Es necesario importar las librerías JSTL de forma manual en tu servidor:
 
-Configuración inicial
-Requisitos
-Java JDK 8+
-GlassFish Server 5.1.0
-MySQL 5.7+
-Librerías:
-JSTL 1.2
-MySQL Connector/J
-JasperReports
+![Importar JSTL](https://github.com/user-attachments/assets/6615c2f2-26a2-401d-b52f-e445b3cc358d)
+![JSTL cargada](https://github.com/user-attachments/assets/a065fabc-3872-452d-b33b-3c93d4bd6915)
 
-Instalación
-Clonar repositorio o copiar archivos a webapps de Tomcat.
+## Configuración inicial
 
-Crear la base de datos con el script SQL proporcionado.
+### Requisitos
 
-Configurar credenciales de MySQL en:
+- Java JDK 8+
+- GlassFish Server 5.1.0
+- MySQL 5.7+
+- Librerías:
+  - JSTL 1.2
+  - MySQL Connector/J
+  - JasperReports
 
-java
-<sql:setDataSource 
-    url="jdbc:mysql://localhost:3306/bdxml2"
-    user="usuario" 
-    password="clave"/>
-Iniciar Tomcat y acceder a:
-http://localhost:8080/NombreProyecto
+### Instalación
 
- Script SQL de ejemplo
- 
- CREATE TABLE ventas (
+1. Clona el repositorio o copia los archivos en la carpeta `webapps` de tu servidor.
+2. Crea la base de datos con el siguiente script SQL:
+
+```sql
+CREATE TABLE ventas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_producto VARCHAR(20) NOT NULL,
     producto VARCHAR(100) NOT NULL,
@@ -86,16 +76,5 @@ http://localhost:8080/NombreProyecto
     fecha DATETIME NOT NULL
 );
 
-Cómo usar
-Login: Ingresar con usuario/contraseña.
-Registrar venta:
-Rellenar formulario en ventas.jsp.
-Consultar/editar:
-Acceder a consultas.jsp.
-Usar botones (editar) o (eliminar).
-Generar PDF:
-Navegar a reportes.jsp.
-Hacer clic en "Generar reporte".
-
-Contacto
 Tello Montes De Oca Angel Antonio - angel_tello_90@hotmail.com 
+
